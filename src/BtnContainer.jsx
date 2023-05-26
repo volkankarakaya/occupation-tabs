@@ -1,13 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const BtnContainer = ({jobs}) => {
+const BtnContainer = ({ jobs, currentItem, setCurrentItem }) => {
   return (
     <div className="btn-container">
-        {jobs.map(item => {
-            return <button key={item.id} className='job-btn'> {item.company}</button>
-        })}
+      {jobs.map((item, index) => {
+        return (
+          <button
+            key={item.id}
+            className={index === currentItem ? "job-btn active-btn" : "job-btn"}
+            onClick={() => setCurrentItem(index)}
+          >
+            {" "}
+            {item.company}
+          </button>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default BtnContainer
+export default BtnContainer;
