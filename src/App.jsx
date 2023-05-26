@@ -30,7 +30,7 @@ const App = () => {
 
   return <section className="jobs-center">
     {/* button container */}
-    <BtnContainer />
+    <BtnContainer jobs={jobs}  />
     {/* job info */}
     <JobInfo jobs={jobs} />
   </section>;
